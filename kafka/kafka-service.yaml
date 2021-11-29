@@ -10,6 +10,6 @@ spec:
     name: kafka-port
     protocol: TCP
     selector:
-        app: kafka
-        id: "0"
+      app: kafka
+      id: "0"
     type: LoadBalancer
