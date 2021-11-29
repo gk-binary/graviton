@@ -9,7 +9,7 @@ spec:
   - port: 9092
     name: kafka-port
     protocol: TCP
-    selector:
-      app: kafka
-      id: "0"
-    type: LoadBalancer
+  selector:
+    app: kafka
+    id: "0"
+  type: LoadBalancer
