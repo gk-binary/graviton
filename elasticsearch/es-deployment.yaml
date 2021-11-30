@@ -5,11 +5,14 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: elasticsearch
+    matchLabels:
+      app: elasticsearch
+      id: "0"
   template:
     metadata:
       labels:
         app: elasticsearch
+        id: "0"
     spec:
       containers:
         - name: elasticsearch
