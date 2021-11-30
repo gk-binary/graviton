@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: elasticsearch
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: es
+      id: "0"
+  template:
+    metadata:
+      labels:
+        app: es
+        id: "0"
+    spec:
+      containers:
+      - name: es
+        image: arm64v8/elasticsearch
+        ports:
+        - containerPort: 9200
