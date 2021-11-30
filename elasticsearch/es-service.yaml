@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: es-service
+  name: elasticsearch-service
   labels:
-    name: es
+    name: elasticsearch-service
 spec:
   ports:
-  - port: 9200
-    name: es-port
-    protocol: TCP
+    - port: 9200
+      targetPort: 9200
+      protocol: TCP
+      name: es-port
   selector:
-    app: es
-    id: "0"
-  type: LoadBalancer
+    app: elasticsearch
+  type: ClusterIP
