@@ -4,6 +4,8 @@ metadata:
   name: elasticsearch
 spec:
   replicas: 1
+  selector:
+    app: elasticsearch
   template:
     metadata:
       labels:
