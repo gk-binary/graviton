@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana
+      id: "0"
+  template:
+    metadata:
+      labels:
+        app: kibana
+        id: "0"
+    spec:
+      containers:
+        - name: kibana
+          image: arm64v8/kibana:7.14.2
+          ports:
+            - containerPort: 5601
